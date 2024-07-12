@@ -1,4 +1,4 @@
-Interrupt Affinity를 통한 Core 지정 연구
+# Interrupt Affinity를 통한 Core 지정 연구
 
 두 종류의 Edge device(Rasberry Pi, Jetson orin nano)에서 메시지 크기와 CPU Core에 따른 네트워크 성능 분석을 진행한 결과 Interrupt Affinty에 따라 Network Throughput 차이가 높게 나타나는 것을 확인할 수 있었음 
 
