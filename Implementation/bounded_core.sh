@@ -12,7 +12,7 @@ bounded_core() {
             cores=$(nproc)
                    for (( i=0; i<$cores; i++ )); do
                         core=$((i+2))
-                        amount=$(grep "^ *$num:" /proc/interrupts | awk -v core="$core" '{print $core}')
+                        amount=$(awk -v num="$num" -v core="$core" '$1 ~ num":" {print $core}' /proc/interrupts)
                         if [ ! -z "$amount" ] && [ "$amount" -gt "$limit" ]; then
                                 bounded="$bounded $i"
                                 break
@@ -23,3 +23,4 @@ bounded_core() {
 }
 
 bounded_core
+
